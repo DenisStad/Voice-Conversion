@@ -6,7 +6,7 @@ function voiceConversion(inputWavFileName, outputWavFileName)
 [inputWav, fs, bps] = wavread(inputWavFileName);
 inputFrames = splitByPitchMarks(inputWav, fs);
 inputFreqs = convertToFrequencyDomain(inputFrames);
-outputFreqs = vtln(inputFreqs, alpha, warpFunction);
+outputFreqs = vtln(inputFreqs, 1.2, 'linear');
 outputFrames = convertToTimeDomain(outputFreqs);
 outputWav = concatenateFrames(outputFrames);
 wavwrite(outputWav, fs, bps, outputWavFileName);
