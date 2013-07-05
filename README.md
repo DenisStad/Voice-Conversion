@@ -2,7 +2,10 @@ README
 
 To convert a voice the following steps are neccessary:
 
-- /Path/To/Praat /Path/To/PraatToPitchMarks.praat /Path/To/Source.wav /Path/To/PitchMarksPraat.PointProcess
-- perl /Path/To/convertPraatToMatlab.pl /Path/To/PitchMarksPraat.PointProcess /Path/To/PitchMarksMat.txt
-- in octave: vc('/Path/To/Source.wav', '/Path/To/PitchMarksMat.txt', alpha, '/Path/To/Output.wav')
-   (alpha is the warping factor)
+- Praat PraatToPitchMarks.praat Source.wav PitchMarksPraat.PointProcess
+- perl convertPraatToMatlab.pl PitchMarksPraat.PointProcess PitchMarksMat.txt
+- in octave: vc('Source.wav', 'PitchMarksMat.txt', alpha, fRatio, 'Output.wav')
+   (alpha is the warping factor, fRatio is the ratio of the fundamental frequency for psola)
+
+
+The test file ("NATOPhoneticAlphabet.wav") is from: "Michael R. Irwin at en.wikiversity" (Creative Commons)
